@@ -1,0 +1,175 @@
+<div class="funda-footer bg-primary" id="homepage-footer">
+  <div class="container">
+    <div class="top-footer py-5">
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <a
+              [routerLink]="['/accounts/create']"
+              [queryParams]="{ step: 'account' }"
+              class="btn btn-danger"
+              >Get Funded</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="middle-footer py-5">
+      <div class="row">
+        <div class="col-12 col-md-3 logo">
+          <img
+            class="img-fluid logo-img"
+            src="assets/images/logos/funda-logo.svg"
+            alt="Funda Logo"
+          />
+          <h2 class="logo-text text-white font-weight-bold">
+            We Fund Founders
+          </h2>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <h4 class="text-success">Company</h4>
+          <ul class="text-white d-flex flex-column">
+            <li (click)="scrollTo('crm-section')" class="my-3">About Us</li>
+            <li (click)="scrollTo('founders-section')" class="my-3">
+              Success Stories
+            </li>
+            <li
+              [routerLink]="['/accounts/create']"
+              [queryParams]="{ step: 'account' }"
+              class="my-3"
+            >
+              Contact
+            </li>
+            <li
+              [routerLink]="['/accounts/create']"
+              [queryParams]="{ step: 'account' }"
+              class="my-3"
+            >
+              FAQs
+            </li>
+            <li [routerLink]="['/login']" class="mt-3 mb-3 mb-md-0">Login</li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="d-flex flex-column justify-content-between">
+            <h4 class="text-success">Resources</h4>
+            <ul class="text-white d-flex flex-column">
+              <li
+                [routerLink]="['/accounts/create']"
+                [queryParams]="{ step: 'account' }"
+                class="my-3"
+              >
+                FAQs
+              </li>
+              <li class="my-3">Careers</li>
+            </ul>
+            <div class="socials-wrapper d-flex mb-3 mb-md-0">
+              <a href="#">
+                <span class="mr-2">
+                  <img
+                    src="assets/images/footer/fb-icon.svg"
+                    alt="facebook link"
+                    style="width: 24px"
+                  />
+                </span>
+              </a>
+              <a href="#">
+                <span class="mr-2">
+                  <img
+                    src="assets/images/footer/tw-icon.svg"
+                    alt="twitter link"
+                    style="width: 24px"
+                  />
+                </span>
+              </a>
+              <a href="#">
+                <span class="mr-2">
+                  <img
+                    src="assets/images/footer/in-icon.svg"
+                    alt="linked in link"
+                    style="width: 24px"
+                  />
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3">
+          <h4 class="text-success mt-3 mt-sm-0">Headquarters</h4>
+          <ul class="text-white d-flex flex-column">
+            <li class="my-3">Tecom, Dubai, UAE.</li>
+            <li class="my-3">Cardinal House, Manchester, UK.</li>
+            <li class="my-3">
+              <span class="mr-2">
+                <img
+                  src="assets/images/footer/msg-icon.svg"
+                  alt="mail link"
+                  style="width: 24px"
+                /> </span
+              ><a href="mailto:hello@funda.ai" class="text-white"
+                >hello@funda.ai</a
+              >
+            </li>
+            <li class="mt-3">
+              <span class="mr-2">
+                <img
+                  src="assets/images/footer/globe-icon.svg"
+                  alt="website link"
+                  style="width: 24px"
+                /> </span
+              >www.funda.ai
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-footer py-5">
+      <div class="row justify-content-between">
+        <div class="col-12 col-xl-8">
+          <ul
+            class="
+              d-flex
+              text-success
+              flex-wrap
+              align-items-center
+              justify-content-center justify-content-xl-start
+              mb-3 mb-xl-0
+              text-center
+            "
+          >
+            <a href="#">
+              <li class="mr-2">Terms of Services</li>
+            </a>
+            |
+            <a href="#">
+              <li class="mx-2">Cookies Policy</li>
+            </a>
+            |
+            <a href="#">
+              <li class="mx-2">Privacy Policy</li>
+            </a>
+            |
+            <a href="#">
+              <li class="ml-2">Anti-discrimination Policy</li>
+            </a>
+          </ul>
+        </div>
+        <div class="col-12 col-xl-4">
+          <p
+            class="
+              copy-rights
+              d-flex
+              align-items-center
+              justify-content-center justify-content-xl-end
+              text-success text-cebter
+              mb-0
+              h-100
+            "
+          >
+            © Copyright 2021 funda. All right reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

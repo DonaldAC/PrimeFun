@@ -1,0 +1,66 @@
+.mx {
+  @media screen and (min-width: 992px) {
+    margin: 0 3.188rem !important;
+  }
+}
+
+.form-input {
+  box-shadow: none;
+  border: none;
+  outline: none;
+  border-bottom: 0.5px solid #000;
+  padding: 0.625rem 0.625rem 0.625rem;
+}
+.textarea {
+  background-color: #f5fbff;
+  border: 0.5px solid rgba(69, 84, 102, 0.4);
+  border-radius: 0.188rem;
+}
+
+.btn-danger {
+  border-radius: 0.313rem;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  height: initial;
+}
+
+.start-chat-container {
+  margin: 0 auto;
+}
+
+.start-chat {
+  border: 0.5px solid rgba(69, 84, 102, 0.4);
+  border-radius: 1.563rem;
+}
+
+.chat-header {
+  border-radius: 1.563rem 1.563rem 0 0;
+  background: linear-gradient(
+    90deg,
+    #ff9557 0%,
+    #c13e47 32.21%,
+    #a23f70 66.51%,
+    #6f4a80 100%
+  );
+}
+
+.atechy-logo {
+  max-width: 50% !important;
+  height: auto;
+  @media screen and (min-width: 600px) {
+    max-width: 20% !important;
+  }
+}
+
+.chat-body {
+  background-color: #f5fbff;
+}
+
+.emp-img-circles {
+  top: 5px;
+}
+
+.chat-footer {
+  border-radius: 0 0 1.563rem 1.563rem;
+  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}

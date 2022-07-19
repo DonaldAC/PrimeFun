@@ -1,0 +1,178 @@
+<div class="ml">
+    <form 
+        [formGroup]="formGroup"
+        (ngSubmit)="formSubmitted()"
+        *ngIf="!isFundformSubmitted && !isFundCredited"
+        
+    >
+        <div class="d-flex flex-wrap ml-0">
+            <div class="row align-items-center mb-4">
+                <div class="col-12">
+                    <label class="text-primary font-weight-semibold">
+                        You can apply for up to £500k funding for your project. 
+                        First tell us a little bit about what you want to achieve
+                         and we will work out how much funding you're
+                          eligible to apply for
+                    </label>
+                </div>
+            </div>
+            <div class="inputs">
+                <div class="row align-items-center mb-4">
+                    <div class="col-12">
+                        <label class="text-primary font-weight-medium mb-2">
+                            What sort of a project do you want to fund?
+                        </label>
+                    </div>
+                    <div class="col-12 input">
+                        <input 
+                            type="text" 
+                            placeholder="www.example.com" 
+                            class="form-input w-100 mb-3"
+                            formControlName="projectName"
+                        >
+                    </div>
+                </div>
+                <div class="row align-items-center mb-4">
+                    <div class="col-12">
+                        <label class="text-primary font-weight-medium mb-2">
+                            Approximately how much you want to borrow?
+                        </label>
+                    </div>
+                    <div class="col-12 input">
+                        <input 
+                            type="text" 
+                            [OnlyNumber]="true"
+                            placeholder="£ 500,000.00" 
+                            class="form-input w-100 mb-3"
+                            formControlName="RequestedAmount"
+                        >
+                    </div>
+                </div>
+                <div class="row align-items-center mb-4">
+                    <div class="col-12">
+                        <label class="text-primary font-weight-medium mb-2">
+                            Briefly explain the project within 500 words
+                        </label>
+                    </div>
+                    <div class="col-12 d-flex input">
+                        <textarea 
+                            id="area" 
+                            name="area" 
+                            cols="30" 
+                            rows="10" 
+                            class="textarea w-100 mb-3"
+                            formControlName="projectBrief"
+                        ></textarea>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-4">
+                    <div class="col-12">
+                        <label class="text-primary font-weight-medium mb-2">
+                            What are the maximum monthly payments you can afford to pay? 
+                            <span class="font-weight-semibold"> 
+                                (The higher monthly payments you can pay, the more funding
+                                 you will be granted)
+                            </span>
+                        </label>
+                    </div>
+                    <div class="col-12 input">
+                        <input 
+                            type="text" 
+                            [OnlyNumber]="true"
+                            placeholder="£ 50 - £ 100" 
+                            class="form-input w-100 mb-3"
+                            formControlName="monthlyPayment"
+                        >
+                    </div>
+                </div>
+                <div class="row align-items-center mb-4">
+                    <div class="col-12">
+                        <label class="text-primary font-weight-medium mb-2">
+                            How much deposit can you afford? 
+                            <span class="font-weight-semibold"> 
+                                (The bigger deposit you can pay, the more funding you will
+                                 be granted)
+                            </span>
+                        </label>
+                    </div>
+                    <div class="col-12 input">
+                        <input 
+                            type="text" 
+                            [OnlyNumber]="true"
+                            placeholder="£ 10000" 
+                            class="form-input w-100 mb-3"
+                            formControlName="deposit"
+                        >
+                    </div>
+                </div>
+                <div class="button text-right mb-2 mr-4 mr-md-5">
+                    <button 
+                        class="btn btn-danger font-weight-semibold mb-5 mt-2"
+                        [disabled]="!formGroup.valid"
+                    >
+                        Submit funding application
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div 
+    *ngIf="isFundformSubmitted && !isFundCredited"
+    class="
+        d-flex flex-column 
+        align-items-center 
+        my-2
+    "
+>
+    <p class="text-primary font-weight-medium mb-4">
+        We have received your application for funding. Approval
+        can take up to 2hours. Please keep an eye on
+            your email in the meantime.
+    </p>
+    <div 
+        class=" 
+            justify-content-center
+            text-center"
+        >
+        <img 
+            src="assets/images/dashboard/main-content/get-started/fund-form-submitted.svg"
+            alt="Application Submitted" 
+            width="135" 
+            height="175"
+        >
+        <h3 class="font-16px text-green font-weight-semibold my-1">
+            Your application for funding is submitted!
+        </h3>
+    </div>
+</div>
+<div 
+    *ngIf="isFundformSubmitted && isFundCredited"
+    class="
+        fund-credited 
+        d-flex flex-column 
+        align-items-center 
+        justify-content-center 
+        text-center my-5
+    "
+>
+    <img 
+        class="img-fluid mb-4" 
+        src="assets/images/dashboard/main-content/get-started/credited-wow.svg"
+        alt="Credited Wow"
+    >
+    <h5 class="text-primary font-weight-medium mb-4">
+        Your funding application has been accepted!
+    </h5>
+    <img 
+        class="img-fluid" 
+        src="assets/images/dashboard/main-content/get-started/Funded-card.svg"
+        alt="Funded Card"
+    >
+    <button 
+        (click)="goToNextAccordionItem('fund-project', $event)"
+        class="btn btn-danger font-weight-semibold mb-3 mt-4"
+    >
+        Let's get creative!
+    </button>
+</div>

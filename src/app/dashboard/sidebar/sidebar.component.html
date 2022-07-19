@@ -1,0 +1,69 @@
+<div class="sidebar bg-primary" [ngClass]="{'collapse-sidebar': isSidebarCollapsed}">
+  <div class="sidebar-brand">
+    <img
+      src="assets/images/logos/funda-logo.svg"
+      width="150"
+      alt=""
+      class="img-fluid brand"
+    />
+  </div>
+  <div class="sidebar-menu">
+    <ul>
+      <li>
+        <a class="active" [routerLink]="['/dashboard/get-started']"
+          ><span
+            ><img
+              src="assets/images/dashboard/sidebar/power-button-dark.svg"
+              alt="power-on"
+              class="img-fluid"
+          /></span>
+          Get Started</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard/wallet']"
+          ><span
+            ><img
+              src="assets/images/dashboard/sidebar/wallet.svg"
+              alt="wallet"
+              class="img-fluid"
+          /></span>
+          Wallet</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard/projects']"
+          ><span
+            ><img
+              src="assets/images/dashboard/sidebar/presentation.svg"
+              alt="projects"
+              class="img-fluid"
+          /></span>
+          Projects</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard/messages']"
+          ><span
+            ><img
+              src="assets/images/dashboard/sidebar/chat.svg"
+              alt="messages"
+              class="img-fluid"
+          /></span>
+          Messages</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard/settings']"
+          ><span
+            ><img
+              src="assets/images/dashboard/sidebar/settings.svg"
+              alt="settings"
+              class="img-fluid"
+          /></span>
+          Settings</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>

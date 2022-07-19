@@ -1,0 +1,79 @@
+.ml {
+  @media screen and (min-width: 992px) {
+    margin-left: 3.188rem !important;
+  }
+}
+
+.all-inputs {
+  flex: 1 1 70%;
+  max-width: 70%;
+  @media screen and (max-width: 1445px) {
+    flex: 1 1 80%;
+    max-width: 80%;
+  }
+  @media screen and (max-width: 1320px) {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+  @media screen and (max-width: 1200px) {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.button-side {
+  flex: 1 1 30%;
+  max-width: 30%;
+  @media screen and (max-width: 1445px) {
+    flex: 1 1 20%;
+    max-width: 20%;
+  }
+  @media screen and (max-width: 1320px) {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+    justify-content: center !important;
+  }
+}
+
+.form-input-wrapper {
+  flex: 1 1 auto;
+}
+
+.form-input {
+  box-shadow: none;
+  border: none;
+  outline: none;
+  border-bottom: 0.5px solid rgba(69, 84, 102, 0.4);
+  padding: 0.625rem 0.625rem 0.625rem;
+}
+
+.form-date-input-wrapper {
+  width: max-content;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: url("/assets/images/misc/calendar.svg") no-repeat center center;
+    position: absolute;
+    width: 20px;
+    height: 22px;
+    right: 0.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+.textarea {
+  background-color: #f5fbff;
+  border: 0.5px solid rgba(69, 84, 102, 0.4);
+  border-radius: 0.188rem;
+}
+
+.btn-danger {
+  border-radius: 0.313rem;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  width: 150px;
+  height: initial;
+}

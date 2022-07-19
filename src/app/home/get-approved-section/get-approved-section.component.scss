@@ -1,0 +1,60 @@
+section {
+  position: relative;
+  background-color: #f2f5f7;
+  padding: 3rem 0 0;
+
+  @media only screen and (min-width: 768px) {
+    padding: 7rem 0 0;
+  }
+}
+
+.heading {
+  font-size: clamp(1.875rem, 4.2vw, 3.125em);
+}
+
+.sub-heading {
+  font-size: clamp(0.875rem, 2.05vw, 1.5rem);
+  color: #455466;
+}
+
+.points {
+  list-style-position: inside;
+  & > * {
+    margin: 2rem 0;
+  }
+}
+
+li {
+  list-style-image: url("/assets/images/homepage/get-approved-section/tick.svg");
+  font-size: clamp(0.875rem, 2.05vw, 1rem);
+  color: #455466;
+}
+
+.btn-danger {
+  font-size: 0.75rem;
+  border-radius: 0.313rem;
+  margin-bottom: 3rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    padding: 1em 1.8em;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.phone {
+  max-width: 95%;
+  height: auto;
+  @media screen and (min-width: 420px) {
+    max-width: 70%;
+  }
+  @media screen and (min-width: 576px) {
+    max-width: 100%;
+  }
+  @media screen and (min-width: 700px) {
+    max-width: 85%;
+  }
+  @media screen and (min-width: 840px) {
+    max-width: 65%;
+  }
+}

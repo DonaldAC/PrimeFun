@@ -1,0 +1,62 @@
+<h3 class="my-4 text-primary font-weight-bold text-center">
+  Reset your password
+</h3>
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+  <div class="form-group mb-0">
+    <div class="row justify-content-center">
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="input-container mb-4">
+          <div class="input-wrapper draw meet position-relative">
+            <label class="position-absolute input-label" for="email"
+              >Email</label
+            >
+            <input
+              type="email"
+              class="form-control form-input p-4"
+              formControlName="email"
+            />
+          </div>
+          <div class="mt-2 text-danger" style="font-size: 0.625rem" *ngIf="">
+            Email is a required field
+          </div>
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7 text-center">
+        <button type="submit" class="btn btn-danger font-weight-semibold">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+<a
+  [routerLink]="['/accounts/login']"
+  class="text-danger font-weight-bold my-4 text-center d-block"
+>
+  Sign in
+</a>
+<p class="text-primary font-weight-medium text-center">
+  Don’t have a funda account?<a
+    [routerLink]="['/accounts/create']"
+    [queryParams]="{ step: 'account' }"
+    class="text-danger font-weight-bold"
+  >
+    Sign up
+  </a>
+</p>
+<div
+  *ngIf="isSubmitted"
+  class="confirmation d-flex flex-column align-items-center mt-5"
+>
+  <img
+    src="assets/images/accounts/reset-password/green-circle-check.svg"
+    alt="green circle checkmart"
+    class="img-fluid"
+  />
+  <p
+    class="font-weight-semibold text-center"
+    style="font-size: 1rem; color: #3fc7b6"
+  >
+    Verification email sent!
+  </p>
+</div>

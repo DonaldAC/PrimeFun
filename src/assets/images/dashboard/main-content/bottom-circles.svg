@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="285" height="114" viewBox="0 0 285 114">
+  <defs>
+    <clipPath id="clip-bottom-circles">
+      <rect width="285" height="114"/>
+    </clipPath>
+  </defs>
+  <g id="bottom-circles" clip-path="url(#clip-bottom-circles)">
+    <ellipse id="Ellipse_70" data-name="Ellipse 70" cx="116.797" cy="116.797" rx="116.797" ry="116.797" transform="translate(233.594 233.594) rotate(180)" fill="#e27993" opacity="0.15"/>
+    <ellipse id="Ellipse_71" data-name="Ellipse 71" cx="18.445" cy="18.445" rx="18.445" ry="18.445" transform="translate(284.538 94.628) rotate(180)" fill="#61f5e3" opacity="0.15"/>
+  </g>
+</svg>

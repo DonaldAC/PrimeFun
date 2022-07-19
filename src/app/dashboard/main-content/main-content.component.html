@@ -1,0 +1,120 @@
+<dashboard-sidebar
+  [isSidebarCollapsed]="isSidebarCollapsed"
+></dashboard-sidebar>
+<div
+  class="main-content position-relative d-flex flex-column"
+  [ngClass]="{ expand: isSidebarCollapsed }"
+>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary py-4 py-lg-4">
+    <div class="container-fluid">
+      <div class="bars-brand d-flex w-lg-none align-items-center">
+        <span class="bars mr-3 w-lg-none" (click)="sidebarCollapse()"
+          ><img
+            src="assets/images/header/bars-blue.svg"
+            alt="bars"
+            class="w-lg-none"
+        /></span>
+        <img
+          src="assets/images/logos/funda-logo.svg"
+          alt=""
+          class="img-fluid brand w-lg-none"
+          [ngClass]="{ 'w-none': !isSidebarCollapsed }"
+        />
+      </div>
+      <button
+        class="navbar-toggler ml-auto p-0"
+        style="border: none"
+        type="button"
+        (click)="isCollapsed = !isCollapsed"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span>
+          <img
+            src="assets/images/dashboard/main-content/header/caret-down-solid.svg"
+            alt=""
+            style="width: 0.625rem"
+          />
+        </span>
+      </button>
+      <div class="user-wrapper ml-3 order-lg-2">
+        <img
+          src="assets/images/dashboard/main-content/header/user.svg"
+          width="30"
+          alt="user"
+          class="img-fluid"
+          style="border: 1px solid #000; border-radius: 50%"
+        />
+      </div>
+      <div
+        class="navbar-collapse collapse"
+        [collapse]="isCollapsed"
+        [isAnimated]="true"
+      >
+        <ul class="nav navbar-nav ml-auto justify-content-center">
+          <li class="nav-item mt-4 my-lg-0 mr-lg-3 text-center font-weight-semibold">Help Center</li>
+          <li class="nav-item mt-3 mb-2 my-lg-0 text-center font-weight-semibold">Logout</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <img
+      src="assets/images/dashboard/main-content/top-circles.svg"
+      alt="top circles"
+      class="img-fluid position-absolute top-circles"
+    />
+    <img
+      src="assets/images/dashboard/main-content/bottom-circles.svg"
+      alt="bottom circles"
+      class="img-fluid position-absolute bottom-circles"
+    />
+  </div>
+  <dashboard-get-started></dashboard-get-started>
+</div>
+<div
+  class="
+    locked-overlay
+    d-flex
+    justify-content-center
+    align-items-center
+    position-fixed
+    absolute-0
+    w-100
+    h-100
+  "
+>
+  <div
+    class="
+      overlay-container
+      container
+      bg-white
+      rounded
+      d-flex
+      flex-column
+      justify-content-center
+      align-items-center
+      p-5
+      mx-4
+      text-center
+    "
+  >
+    <span
+      ><img
+        src="assets/images/misc/locked-pink-circle.svg"
+        alt="locked"
+        class="img-fluid"
+    /></span>
+    <p class="font-16px text-danger font-weight-medium">
+      Account is pending approval
+    </p>
+
+    <h3 class="font-24px text-primary font-weight-semibold mt-4 mb-0">
+      Thank you for your funda application!
+    </h3>
+    <h3 class="font-24px text-primary font-weight-semibold my-4">
+      We will be in touch soon to discuss your requirements.
+    </h3>
+
+    <a [routerLink]="['/']" class="btn btn-danger">Home</a>
+  </div>
+</div>

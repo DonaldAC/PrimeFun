@@ -1,0 +1,184 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./theme/colors.scss";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~swiper/swiper-bundle";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+@import "~ngx-toastr/toastr";
+
+//Bootstrap override
+body {
+  min-height: 100% !important;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1366px;
+}
+
+.btn-pink-regular {
+  position: relative;
+  padding: 0.8rem 1.5rem;
+  background-color: $secondaryColor;
+
+  &::before {
+    position: absolute;
+    top: -10%;
+    bottom: 0;
+    left: 0%;
+    right: 0;
+    content: "";
+    height: 120%;
+    width: 100%;
+    background: transparent;
+    border-radius: 0.313rem;
+  }
+
+  &:hover,
+  &:active {
+    &::before {
+      animation: btn-hover 0.5s;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.btn-danger {
+  position: relative;
+  padding: 0.8em 1.5em;
+  background-color: $secondaryColor;
+  // border-radius: 0.625rem;
+  border-radius: 0.188rem;
+
+  &::before {
+    position: absolute;
+    top: -10%;
+    bottom: 0;
+    left: 0%;
+    right: 0;
+    content: "";
+    height: 120%;
+    width: 100%;
+    background: transparent;
+    border-radius: 0.313rem;
+  }
+
+  &:hover {
+    background-color: $secondaryColor;
+    &::before {
+      animation: btn-hover 0.5s;
+    }
+  }
+
+  &:focus {
+    background-color: $secondaryColor;
+    box-shadow: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.text-danger {
+  color: $secondaryColor !important;
+}
+
+.text-success {
+  color: $accentColor !important;
+}
+
+.text-primary {
+  color: $primaryColor !important;
+}
+
+.text-gray {
+  color: $grayColor !important;
+}
+
+.bg-primary {
+  background-color: $primaryColor !important;
+}
+
+.bg-debug-pink {
+  background-color: pink !important;
+}
+
+// Custom classes
+.font-weight-semibold {
+  font-weight: 600;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-50px {
+  font-size: clamp(1.875rem, 4.2vw, 3.125em);
+}
+
+.font-24px {
+  font-size: clamp(0.875rem, 2.05vw, 1.5rem);
+}
+
+.font-16px {
+  font-size: clamp(0.875rem, 2.05vw, 1rem);
+}
+
+.absolute-0 {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+// Animations
+@keyframes btn-hover {
+  0% {
+    border: 1.5px #ff3366 solid;
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    border: 1.5px #ff3366 solid;
+    opacity: 1;
+  }
+  100% {
+    border: 1.5px #ff3366 solid;
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+// Swiper styles override
+.swiper-button-prev {
+  display: none;
+}
+
+.swiper-button-next {
+  display: none;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}

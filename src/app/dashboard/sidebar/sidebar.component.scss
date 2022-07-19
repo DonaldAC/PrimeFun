@@ -1,0 +1,70 @@
+@import "../../../theme/colors.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.sidebar {
+  transition: 0.3s;
+  width: 18.75rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transform: translateX(0);
+
+  @media screen and (max-width: 420px) {
+    width: 12.5rem;
+  }
+}
+
+.sidebar-brand {
+  transition: 0.3s;
+  height: 9.375rem;
+  padding: 1rem 0rem 1rem 4rem;
+  @media screen and (max-width: 420px) {
+    padding-left: 2rem;
+  }
+}
+
+.sidebar-brand img {
+  margin-top: 1.875rem;
+}
+
+.sidebar-menu li {
+  transition: 0.3s;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  @media screen and (max-width: 420px) {
+    padding-left: 1rem;
+  }
+}
+
+.sidebar-menu a {
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 1rem;
+}
+
+.sidebar-menu a.active {
+  background-color: #f2f5f7;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: $primaryColor;
+  border-radius: 1.875rem 0 0 1.875rem;
+}
+
+.collapse-sidebar {
+  transition: 0.3s;
+  transform: translateX(-18.75rem);
+
+  @media screen and (min-width: 992px) {
+    transform: translateX(0);
+  }
+}

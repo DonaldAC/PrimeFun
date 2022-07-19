@@ -1,0 +1,101 @@
+<section class="get-started py-5 h-100">
+  <div class="container">
+    <div class="row mb-4 mb-lg-0">
+      <div class="col-12 col-lg-8">
+        <h1
+          class="
+            font-24px font-weight-semibold
+            text-primary text-center text-lg-left
+            mb-0
+          "
+        >
+          Let's get funded in less than 24 hours!
+        </h1>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div
+          class="
+            helper-phil-wrapper
+            d-flex
+            justify-content-end justify-content-lg-end
+            h-100
+            pt-lg-0
+          "
+        >
+          <div class="uncle-phil position-relative">
+            <div
+              class="shadow bubble text-primary font-weight-semibold position-absolute"
+            >
+              Hey I'm Phil from Funda. I'm here to help you get your first
+              project funded and launched. Let's go!
+            </div>
+            <img
+              src="assets/images/dashboard/main-content/get-started/phil.svg"
+              alt="uncle phil"
+              class="img-fluid position-relative"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <app-funda-accordion #accordion>
+          <app-accordion-item
+            id="funda-intro"
+            title="Get to grips with how Funda works"
+            icon="assets/images/dashboard/main-content/get-started/ff-icon.svg"
+          >
+            <get-started-intro
+              [goToNextAccordionItem]="goToNextAccordionItem"
+            ></get-started-intro>
+          </app-accordion-item>
+          <app-accordion-item
+            id="business-info-form"
+            title="Tell us about your business"
+            icon="assets/images/dashboard/main-content/get-started/msgs-icon.svg"
+          >
+            <get-started-business-info-form
+              [goToNextAccordionItem]="goToNextAccordionItem"
+            ></get-started-business-info-form>
+          </app-accordion-item>
+          <app-accordion-item
+            id="verify-identity"
+            title="Verify your identity"
+            icon="assets/images/dashboard/main-content/get-started/fingerprint-icon.svg"
+          >
+            <get-started-verify-identity
+              [goToNextAccordionItem]="goToNextAccordionItem"
+            ></get-started-verify-identity>
+          </app-accordion-item>
+          <app-accordion-item
+            #projectBriefing
+            id="project-briefing"
+            title="Brief your project"
+            icon="assets/images/dashboard/main-content/get-started/bulb-icon.svg"
+          >
+            <get-started-project-briefing
+              [projectBriefingAccordion]="projectBriefingAccordion"
+            ></get-started-project-briefing>
+          </app-accordion-item>
+          <app-accordion-item
+            id="request-funding"
+            title="Request your funding"
+            icon="assets/images/dashboard/main-content/get-started/funding-icon.svg"
+          >
+            <get-started-request-funding 
+              [goToNextAccordionItem]="goToNextAccordionItem"
+            ></get-started-request-funding>
+          </app-accordion-item>
+          <app-accordion-item
+            id="fund-project"
+            title="Fund your project"
+            icon="assets/images/dashboard/main-content/get-started/coins-icon.svg"
+          >
+            <p class="mb-0">accordion 2</p>
+          </app-accordion-item>
+        </app-funda-accordion>
+      </div>
+    </div>
+  </div>
+</section>

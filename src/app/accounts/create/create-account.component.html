@@ -1,0 +1,61 @@
+<div class="container-fluid vh-100 w-100">
+  <div class="row h-100">
+    <div class="d-none d-md-block col-12 col-md-6 bg-primary orientation">
+      <accounts-review></accounts-review>
+    </div>
+    <div
+      class="
+        col-12 col-md-6
+        d-flex
+        flex-column
+        justify-content-center
+        align-items-center
+        orientation-form
+        position-relative
+        py-3
+      "
+    >
+      <img
+        src="assets/images/accounts/top-circles.svg"
+        alt="top circles"
+        class="img-fluid position-absolute orientation-circles top-circles"
+      />
+      <img
+        src="assets/images/accounts/bottom-circles.svg"
+        alt="bottom circles"
+        class="img-fluid position-absolute orientation-circles bottom-circles"
+      />
+      <img
+        class="img-fluid"
+        src="assets/images/logos/funda-logo-dark.svg"
+        alt="Funda Logo"
+        width="150"
+      />
+      <h3 class="mt-4 mb-0 text-primary font-weight-bold text-center">
+        How much funding
+      </h3>
+      <h3 class="mb-4 text-primary font-weight-regular text-center">
+        are you eligible for?
+      </h3>
+      <info-form
+        *ngIf="step === 'info'; else create"
+        class="w-100 mb-5"
+      ></info-form>
+      <ng-template #create>
+        <create-form
+          class="w-100 mb-5"
+          (submit)="isFormSubmitted($event)"
+        ></create-form>
+      </ng-template>
+      <p class="text-primary font-weight-medium text-center">
+        Already have an account?<a
+          [routerLink]="['/accounts/login']"
+          class="text-danger font-weight-bold"
+        >
+          Sign in
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+<app-progress-loader [isLoading]="isSubmitted"></app-progress-loader>

@@ -1,0 +1,26 @@
+<div class="accordion-group">
+  <div
+    class="accordion-heading font-weight-medium text-primary"
+    [ngClass]="{ active: active }"
+    (click)="headerClickHandler($event)"
+  >
+    <span class="mr-3"
+      ><img
+        [src]="
+          !isCompleted
+            ? icon
+            : 'assets/images/dashboard/main-content/get-started/green-circle-check.svg'
+        "
+        alt="funda icon"
+        class="img-fluid"
+        width="35"
+        height="35"
+    /></span>
+    <span>{{ title }}</span>
+  </div>
+  <div class="accordion-body" #body>
+    <div class="accordion-body-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

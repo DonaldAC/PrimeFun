@@ -1,0 +1,141 @@
+<form
+  [formGroup]="formGroup"
+  (ngSubmit)="submitForm()"
+  [ngClass]="{ submitted: isSubmitted }"
+>
+  <div class="form-group mb-0">
+    <div class="row justify-content-center">
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="input-wrapper draw meet position-relative mb-4">
+          <label for="companyName" class="position-absolute input-label"
+            >Company name</label
+          >
+          <input
+            type="text"
+            formControlName="companyName"
+            class="form-control form-input p-4"
+            aria-describedby="company name"
+          />
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div
+          class="input-wrapper draw meet position-relative"
+          [ngClass]="{
+            'mb-4': !formGroup.controls.businessWebsite.errors?.pattern,
+            'mb-2': formGroup.controls.businessWebsite.errors?.pattern
+          }"
+        >
+          <label for="businessWebsite" class="position-absolute input-label"
+            >Business Website</label
+          >
+          <input
+            type="url"
+            formControlName="businessWebsite"
+            class="form-control form-input p-4"
+            aria-describedby="Business Website"
+          />
+        </div>
+        <small
+          *ngIf="formGroup.controls.businessWebsite.errors?.pattern"
+          class="text-danger mb-4 error-message error-message"
+        >
+          Please enter valid a website
+        </small>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="input-wrapper draw meet position-relative mb-4">
+          <label for="businessCountry" class="position-absolute input-label"
+            >Country of Incorporation</label
+          >
+          <select
+            class="form-input select"
+            (change)="changeCountry($event)"
+            formControlName="businessCountry"
+          >
+            <option value="" disabled>Choose your country</option>
+            <option *ngFor="let country of countries" [value]="country.name">
+              {{ country.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="input-wrapper draw meet position-relative mb-4">
+          <label for="preferredCurrency" class="position-absolute input-label"
+            >Preferred Currency</label
+          >
+          <select
+            class="form-input select"
+            (change)="changeCurrency($event)"
+            formControlName="preferredCurrency"
+          >
+            <option value="" disabled>Specify your Currency</option>
+            <option *ngFor="let currency of currencies" [value]="currency">
+              {{ currency }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="input-wrapper draw meet position-relative mb-4">
+          <label for="monthlyRevenue" class="position-absolute input-label"
+            >Monthly Revenue</label
+          >
+          <select
+            class="form-input select"
+            (change)="changeRevenue($event)"
+            formControlName="monthlyRevenue"
+          >
+            <option value="" disabled>Specify your revenue range</option>
+            <option *ngFor="let revenue of revenues" [value]="revenue">
+              {{ revenue }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="input-wrapper draw meet position-relative mb-4">
+          <label for="fundingPurpose" class="position-absolute input-label"
+            >Purpose of Funding</label
+          >
+          <select
+            class="form-input select"
+            (change)="changePurpose($event)"
+            formControlName="fundingPurpose"
+          >
+            <option value="" disabled>Specify your purpose</option>
+            <option *ngFor="let purpose of purposes" [value]="purpose">
+              {{ purpose }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div *ngIf="othersPurpose" class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="input-wrapper draw meet position-relative mb-4">
+          <label for="othersPurpose" class="position-absolute input-label"
+            >Specify Here</label
+          >
+          <input
+            type="text"
+            formControlName="othersPurpose"
+            class="form-control form-input p-4"
+            aria-describedby="othersPurpose"
+          />
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7 text-center">
+        <button
+          type="submit"
+          class="btn btn-danger font-weight-semibold"
+          [disabled]="!formGroup.valid"
+        >
+          Let's Check
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<app-progress-loader [isLoading]="isSubmitted"></app-progress-loader>
+<app-call-booking [isLoaded]="isLoaded"></app-call-booking>

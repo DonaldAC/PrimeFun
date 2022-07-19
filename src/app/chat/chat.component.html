@@ -1,0 +1,84 @@
+<div class="chat my-5">
+  <div class="
+    chat-header d-flex 
+    justify-content-center 
+    align-items-center p-3"
+  >
+    <img
+      src="assets/images/logos/atechy-logo.svg"
+      alt="atechy logo"
+      class="atechy-logo img-fluid"
+    />
+  </div>
+  <div
+    class="
+      chat-body
+      d-flex
+      flex-column
+      justify-content-center
+      align-items-center
+      p-5
+      position-relative
+    "
+  >
+    <img
+      src="assets/images/dashboard/main-content/top-circles.svg"
+      alt="top circles"
+      class="img-fluid position-absolute top-circles"
+    />
+    <img
+      src="assets/images/dashboard/main-content/bottom-circles.svg"
+      alt="bottom circles"
+      class="img-fluid position-absolute bottom-circles"
+    />
+    <chat-messages></chat-messages>
+  </div>
+  <div class="chat-footer text-center pt-0 pb-4 px-3">
+    <div class="chat-input-container p-4 bg-white">
+      <div class="row">
+        <div class="col-10">
+          <div class="d-flex flex-column justify-content-center">
+            <div class="input-group">
+              <input 
+                type="text" 
+                class="form-input position-relative"
+                formControlName="chat-message" 
+                placeholder="Enter your message here..."
+              >
+              <div class="position-absolute chatIcon">
+                <span class="input-group-text float-left">
+                  <img 
+                    src="assets/images/misc/attach.svg" 
+                    alt="Attach File"
+                  >
+                </span>
+                <span class="input-group-text">
+                  <img 
+                    src="assets/images/misc/smile.svg" 
+                    alt="Smile"
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="d-flex flex-column align-items-center">
+            <button
+            type="button" 
+            class="btn btn-danger d-none d-md-block font-weight-semibold"
+            >
+              send
+            </button>
+            <img 
+              src="assets/images/misc/right-arrow.svg" 
+              alt="Right Arrow" 
+              class="arrow img-fluid d-md-none text-center pt-2"
+              width="25"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

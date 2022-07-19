@@ -1,0 +1,152 @@
+<form
+  [formGroup]="formGroup"
+  (ngSubmit)="submitForm()"
+  [ngClass]="{ submitted: isSubmitted }"
+>
+  <div class="form-group mb-0">
+    <div class="row justify-content-center">
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="input-wrapper draw meet position-relative mb-4">
+          <label for="firstName" class="position-absolute input-label"
+            >First name</label
+          >
+          <input
+            type="text"
+            formControlName="firstName"
+            class="form-control form-input p-4"
+            aria-describedby="first name"
+          />
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="input-wrapper draw meet position-relative mb-4">
+          <label for="lastName" class="position-absolute input-label"
+            >Last name</label
+          >
+          <input
+            type="text"
+            formControlName="lastName"
+            class="form-control form-input p-4"
+            aria-describedby="last name"
+          />
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div
+          class="input-wrapper draw meet position-relative"
+          [ngClass]="{
+            'mb-4': !formGroup.controls.phoneNumber.errors?.pattern,
+            'mb-2': formGroup.controls.phoneNumber.errors?.pattern
+          }"
+        >
+          <label for="phoneNumber" class="position-absolute input-label"
+            >Phone Number</label
+          >
+          <input
+            type="tel"
+            [OnlyNumber]="true"
+            formControlName="phoneNumber"
+            class="form-control form-input p-4"
+            aria-describedby="phone number"
+          />
+        </div>
+        <small
+          *ngIf="formGroup.controls.phoneNumber.errors?.pattern"
+          class="text-danger mb-4 error-message"
+        >
+          Please enter a valid phone number
+        </small>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div
+          class="input-wrapper draw meet position-relative"
+          [ngClass]="{
+            'mb-4': !formGroup.controls.email.errors?.pattern && !emailMessage,
+            'mb-2': formGroup.controls.email.errors?.pattern || emailMessage
+          }"
+        >
+          <label for="workEmail" class="position-absolute input-label"
+            >Work email</label
+          >
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control form-input p-4"
+            id="workEmail"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div *ngIf="formGroup.controls.email.errors?.pattern">
+          <small class="text-danger mb-4 error-message"
+            >Please enter a valid email
+          </small>
+        </div>
+
+        <small *ngIf="emailMessage" class="text-danger mb-4 error-message">{{
+          emailMessage
+        }}</small>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div
+          class="input-wrapper draw meet position-relative"
+          [ngClass]="{
+            'mb-4': !formGroup.controls.password.errors?.minlength,
+            'mb-2': formGroup.controls.password.errors?.minlength
+          }"
+        >
+          <label for="password" class="position-absolute input-label"
+            >Password</label
+          >
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control form-input p-4"
+            id="password"
+          />
+        </div>
+        <small
+          *ngIf="formGroup.controls.password.errors?.minlength"
+          class="text-danger mb-4 error-message"
+        >
+          Password must have 8 chacters minimum.
+        </small>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="mb-2 form-check">
+          <input
+            type="checkbox"
+            formControlName="terms"
+            class="form-check-input"
+            id="terms"
+          />
+          <label class="form-check-label font-weight-medium" for="terms"
+            >I agree to Funda Privacy Policy & Terms</label
+          >
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7">
+        <div class="mb-4 form-check">
+          <input
+            type="checkbox"
+            formControlName="agreements"
+            class="form-check-input"
+            id="agreements"
+          />
+          <label class="form-check-label font-weight-medium" for="agreements"
+            >Keep me informed about Funda products and insights to accelerate my
+            growth</label
+          >
+        </div>
+      </div>
+      <div class="col-420px-12 col-10 col-sm-8 col-xl-7 text-center">
+        <button
+          type="submit"
+          class="btn btn-danger font-weight-semibold"
+          [disabled]="!formGroup.valid || emailMessage"
+        >
+          Create Account
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

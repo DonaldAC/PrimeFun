@@ -1,0 +1,66 @@
+@import "../../../../theme/colors.scss";
+
+:host {
+  margin-top: 8rem;
+  height: 100%;
+  @media screen and (max-width: 992px) {
+    margin-top: 0;
+  }
+}
+
+.helper-phil-wrapper {
+  padding-top: 7rem;
+}
+
+.bubble {
+  z-index: 2;
+  top: -68px;
+  font-size: clamp(0.875rem, 1.5vw, 0.95rem);
+  right: 71px;
+  line-height: 24px;
+  width: 320px;
+  background: #fff;
+  border-radius: 2.05rem;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+
+  &::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 1.65rem solid #fff; 
+    border-right: 20px solid transparent;
+    border-top: 5.35rem solid #fff;
+    border-bottom: 32px solid transparent; 
+    right: -21px;
+    bottom: 0px;
+    transform: rotateX(180deg); 
+    @media screen and (max-width: 412px) {
+      border-left: 1.95rem solid #fff;
+      border-top: 6.35rem solid #fff;
+    }
+  }
+  @media screen and (max-width: 413px) {
+    width: 230px;
+    top: -90px;
+    right: 70px;
+  }
+}
+
+.uncle-phil {
+  top: -60px;
+
+  @media screen and (max-width: 992px) {
+    top: 0;
+  }
+
+  @media screen and (max-width: 413px) {
+    top: 20px;
+  }
+}
+
+.font-24px {
+  font-size: clamp(1.25rem, 2.05vw, 1.5rem);
+}

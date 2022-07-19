@@ -1,0 +1,31 @@
+section {
+  padding: 3rem 0;
+  @media only screen and (min-width: 768px) {
+    padding: 7rem 0;
+  }
+}
+
+.heading {
+  font-size: clamp(1.875rem, 4.2vw, 3.125em);
+  margin-bottom: 1rem;
+}
+
+.sub-heading {
+  font-size: clamp(0.875rem, 2.05vw, 1.5rem);
+  color: #455466 !important;
+}
+
+.we-can-fund-box {
+  // border: 1px solid #455466;
+  border-radius: 0.313rem;
+  background-color: #fff;
+  color: #ff3366;
+  filter: drop-shadow(-5px -5px 5px #f2f5f79e);
+  box-shadow: 5px 5px 10px #0000001a;
+
+  & h3 {
+    margin-bottom: 0;
+    font-size: clamp(0.875rem, 2.05vw, 1rem);
+    padding: 1.5em 0;
+  }
+}

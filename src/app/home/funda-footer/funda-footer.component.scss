@@ -1,0 +1,69 @@
+@import "../../../theme/colors.scss";
+
+.funda-footer {
+  a,
+  p,
+  li {
+    font-size: 14px;
+  }
+  hr {
+    color: white;
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .top-footer {
+    border-bottom: 0.5px solid #fff;
+  }
+
+  .middle-footer {
+    border-bottom: 0.5px solid #fff;
+    li {
+      cursor: pointer;
+    }
+    .logo {
+      .logo-text {
+        font-size: clamp(1rem, 2.05vw, 1.5rem);
+        margin: 1.5rem 0;
+        @media screen and (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .logo-img {
+        width: 9.375rem;
+      }
+    }
+    @media screen and (max-width: 576px) {
+      .logo {
+        text-align: center;
+      }
+    }
+  }
+
+  .bottom-footer {
+    a {
+      text-decoration: none;
+      color: $accentColor;
+      li {
+        border-bottom: 1px solid $accentColor;
+        font-size: 0.75rem;
+      }
+    }
+    p {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.btn-danger {
+  font-size: 0.75rem;
+  border-radius: 0.313rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    padding: 1em 1.8em;
+  }
+}

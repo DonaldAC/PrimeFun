@@ -1,0 +1,19 @@
+
+/**
+ Defines global screen width that can be used globally
+ we can pass all the global spacing here
+*/
+
+// Breakpoints
+$screen-mobile-landscape: 576px;
+$screen-tablet-portrait: 768px;
+$screen-tablet-landscape: 992px;
+$screen-desktop-small: 1200px;
+$screen-desktop-medium: 1440px;
+$screen-desktop-large: 1920px;
+
+// Max widths
+$screen-mobile-landscape-max-width: 296px;
+$screen-tablet-portrait-max-width: 704px;
+$screen-tablet-landscape-max-width: 895px;
+$screen-desktop-small-max-width: 1144px;

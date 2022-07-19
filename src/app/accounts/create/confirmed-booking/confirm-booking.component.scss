@@ -1,0 +1,13 @@
+.content{
+  width: 100%;
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-container{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

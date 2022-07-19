@@ -1,0 +1,84 @@
+.chat {
+  box-sizing: content-box;
+  background-color: #f5fbff;
+  border: 0.5px solid rgba(69, 84, 102, 0.4);
+  border-radius: 1.563rem;
+}
+
+.chat-header {
+  border-radius: 1.563rem 1.563rem 0 0;
+  background: linear-gradient(
+    90deg,
+    #ff9557 0%,
+    #c13e47 32.21%,
+    #a23f70 66.51%,
+    #6f4a80 100%
+  );
+}
+
+.atechy-logo {
+  max-width: 50% !important;
+  height: auto;
+  @media screen and (min-width: 600px) {
+    max-width: 20% !important;
+  }
+}
+
+.chat-body {
+  min-height: 400px;
+  @media screen and (min-width: 992px) {
+    min-height: 600px;
+  }
+}
+
+.top-circles {
+  max-width: 48%;
+  left: 5%;
+  top: 0;
+  @media screen and (min-width: 600px) {
+    max-width: 23%;
+  }
+}
+
+.bottom-circles {
+  max-width: 42%;
+  right: 5%;
+  bottom: 0;
+  @media screen and (min-width: 600px) {
+    max-width: 22%;
+  }
+}
+
+.chat-footer {
+  border-radius: 0 0 1.563rem 1.563rem;
+  cursor: pointer;
+}
+
+.chat-input-container {
+  border-radius: 0.938rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.625rem 1.65rem;
+  border-radius: 0.45rem;
+  border: 2px solid rgba(69, 84, 102, 0.4);
+}
+
+.input-group-text {
+  border: none;
+  background-color: #fff;
+}
+
+.chatIcon {
+  bottom: 10px;
+  right: 3%;
+}
+
+@media screen and (max-width: 414px) {
+  .arrow {
+    min-width: 20px;
+    margin: 5px;
+  }
+}

@@ -1,0 +1,52 @@
+.accordion-group {
+  transition: height 0.2s;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 1.875rem;
+  background-color: #fff;
+}
+
+.accordion-heading {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    transition: 0.2s;
+    content: "";
+    position: absolute;
+    right: 1rem;
+    transform: rotate(0deg);
+    width: 19px;
+    height: 11px;
+    background: url("/assets/images/dashboard/main-content/get-started/arrow-down.svg")
+      no-repeat center center;
+  }
+}
+
+.accordion-heading.active {
+  &::after {
+    transition: 0.2s;
+    transform: rotate(-90deg);
+  }
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+}
+
+.accordion-heading.active + .accordion-body-content {
+  max-height: auto;
+}

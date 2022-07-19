@@ -1,0 +1,49 @@
+.ml {
+    @media screen and (min-width: 992px) {
+        margin-left: 3.188rem !important;
+    }
+}
+.inputs {
+    flex: 1 1 70%;
+    max-width: 60%;
+    @media screen and (max-width: 1445px) {
+        flex: 1 1 80%;
+        max-width: 80%;
+    }
+    @media screen and (max-width: 1320px) {
+        flex: 1 1 90%;
+        max-width: 90%;
+    }
+    @media screen and (max-width: 1200px) {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .button {
+        @media screen and (max-width: 1445px) {
+            flex: 1 1 30%;
+            max-width: 30%;
+        }
+        @media screen and (max-width: 1320px) {
+            flex: 1 1 100%;
+            max-width: 100%;
+            margin-top: 1rem;
+            justify-content: center !important;
+        }
+    }
+}
+
+.form-input {
+    box-shadow: none;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #E2E2E2;
+    padding: 0.625rem;
+}
+.textarea {
+    background-color: #f5fbff;
+    border: 2px solid #E2E2E2;
+    border-radius: 0.188rem;
+}
+.text-green {
+    color: #3fc7b6;
+}

@@ -1,0 +1,19 @@
+.play-btn {
+  width: 15%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-danger {
+  border-radius: 0.313rem;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  width: 150px;
+  height: initial;
+}
+
+.pl {
+  @media screen and (min-width: 992px) {
+    padding-left: 3.188rem !important;
+  }
+}

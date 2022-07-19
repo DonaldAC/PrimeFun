@@ -1,0 +1,49 @@
+<!--Start of get approved section -->
+<section class="get-approved" id="get-approved-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 order-2 order-sm-1">
+        <div class="d-flex align-items-end justify-content-center h-100">
+          <img
+            src="assets/images/homepage/get-approved-section/funds-approved.svg"
+            class="phone"
+            alt="congrats! funds are approved - phone"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 order-1 order-sm-2">
+        <div
+          class="d-flex flex-column align-items-center align-items-sm-start justify-content-start justify-content-sm-center h-100"
+        >
+          <div class="text-container">
+            <div class="text-center text-sm-left">
+              <h1 class="heading text-primary font-weight-bold mb-3">
+                Get approved within <br />24 hours
+              </h1>
+              <h1 class="sub-heading font-weight-medium mb-0">
+                and easily access your fund
+              </h1>
+            </div>
+            <div class="">
+              <div class="points">
+                <li class="">Same day payments</li>
+                <li class="">Secure virtual credit</li>
+                <li class="">Online invoice payments</li>
+              </div>
+            </div>
+            <div class="text-center text-sm-left">
+              <a
+                [routerLink]="['/accounts/create']"
+                [queryParams]="{ step: 'account' }"
+                class="btn btn-danger font-weight-semibold"
+              >
+                Get Funded
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of get approved section -->

@@ -1,0 +1,10 @@
+<div class="toggle-wrapper position-relative">
+  <input
+    type="checkbox"
+    class="toggle d-inline-block position-relative"
+    (input)="onValueChange($event)"
+    [checked]="value"
+  />
+  <div class="toggle-text yes"><span>Yes</span></div>
+  <div class="toggle-text no">No</div>
+</div>

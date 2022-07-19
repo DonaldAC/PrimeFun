@@ -1,0 +1,178 @@
+<form 
+  [formGroup]="formGroup" 
+  (ngSubmit)="InfoSubmit()" 
+  [ngClass]="{submitted: isSubmitted}"
+>
+  <div class="d-flex flex-wrap ml-0 ml mb-3">
+    <div class="all-inputs">
+      <div class="row align-items-center mb-4">
+        <div class="col-12 col-md-6">
+          <label class="mb-2 mb-lg-0 text-primary font-weight-medium">
+            Is your business new start up?
+          </label>
+        </div>
+        <div class="col-12 col-md-6 input">
+          <switch-toggle formControlName="newStartUp"></switch-toggle>
+        </div>
+      </div>
+      <div class="row align-items-center mb-4">
+        <div class="col-12 col-md-6">
+          <label class="mb-2 mb-lg-0 text-primary font-weight-medium">
+            How long has your business been trading?
+          </label>
+        </div>
+        <div class="col-12 col-md-6 input">
+          <div class="form-date-input-wrapper w-100">
+            <input
+              type="text"
+              placeholder="DD / MM / YYYY"
+              class="form-input date w-100"
+              formControlName="businessAge"
+              bsDatepicker
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center mb-4">
+        <div class="col-12 col-md-6">
+          <label class="mb-2 mb-lg-0 text-primary font-weight-medium">
+            What country is your business registered in?
+          </label>
+        </div>
+        <div class="col-12 col-md-6 input">
+          <select
+            class="form-input select w-100"
+            (change)="changeCountry($event)"
+            formControlName="businessCountry"
+          >
+            <option value="" disabled>Select the country</option>
+            <option *ngFor="let country of countries" [value]="country.name">
+              {{ country.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="row align-items-center mb-4">
+        <div class="col-12">
+          <label class="text-primary font-weight-medium">
+            What is your business address?
+          </label>
+        </div>
+        <div class="inputs-container col-12">
+          <div class="row">
+            <div class="col-12 col-md-6 input first">
+              <input
+                type="text"
+                placeholder="Address Line 1"
+                class="form-input mb-3 mt-3 w-100"
+                formControlName="addressLine1"
+              />
+            </div>
+            <div class="col-12 col-md-6 input second">
+              <input
+                type="text"
+                placeholder="Address Line 2"
+                class="form-input mb-3 mt-3 w-100"
+                formControlName="addressLine2"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6 input first">
+              <input
+                type="text"
+                placeholder="State / Province / Region"
+                class="form-input mb-3 mt-3 w-100"
+                formControlName="stateProvinceRegion"
+              />
+            </div>
+            <div class="col-12 col-md-6 input second">
+              <input
+                type="text"
+                placeholder="City / Town"
+                class="form-input mb-3 mt-3 w-100"
+                formControlName="cityTown"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6 input first">
+              <input
+                type="text"
+                placeholder="Zip / Postal Code"
+                class="form-input mb-3 mt-3 w-100"
+                formControlName="zipPostalCode"
+              />
+            </div>
+            <div class="col-12 col-md-6 input second">
+              <input
+                type="text"
+                placeholder="Country"
+                class="form-input mb-3 mt-3 w-100"
+                formControlName="country"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center mb-4">
+        <div class="col-12">
+          <label class="mb-2 mb-lg-0 text-primary font-weight-medium">
+            Business Website?
+          </label>
+        </div>
+        <div class="d-flex col-12 input" *ngIf="userDetails">
+          <input
+            type="text"
+            value="{{userDetails.businessWebsite}}"
+            class="form-input w-100"
+            formControlName="businessWebsite"
+          />
+        </div>
+      </div>
+      <div class="row align-items-center mb-4">
+        <div class="col-12">
+          <label class="mb-2 mb-lg-0 text-primary font-weight-medium">
+            How does your business make money?
+          </label>
+        </div>
+        <div class="d-flex col-12 input">
+          <textarea
+            name="area"
+            id="area"
+            cols="30"
+            rows="10"
+            class="col-12 px-0 form-input textarea mt-3"
+            formControlName="businessDetails"
+            ></textarea>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-12">
+            <label class="mb-2 mb-lg-0 text-primary font-weight-medium">
+              Explain your business model in 100-150 words?
+            </label>
+          </div>
+          <div class="d-flex col-12 input">
+            <textarea
+            name="area"
+            id="area"
+            cols="30"
+            rows="10"
+            class="col-12 px-0 form-input textarea mt-3 mb-0"
+            formControlName="businessModel"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="button-side d-flex justify-content-end align-items-end">
+      <button
+        class="btn btn-danger font-weight-semibold mr-3"
+        (click)="goToNextAccordionItem('verify-identity', $event)"
+        [disabled]="!formGroup.valid"
+      >
+        Let's go!
+      </button>
+    </div>
+  </div>
+</form>

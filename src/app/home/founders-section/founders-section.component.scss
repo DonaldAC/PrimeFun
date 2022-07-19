@@ -1,0 +1,29 @@
+section {
+  padding: 3rem 0;
+  @media only screen and (min-width: 768px) {
+    padding: 7rem 0;
+  }
+}
+
+.heading {
+  font-size: clamp(1.2rem, 2.05vw, 1.875rem);
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.logo {
+  @media screen and (min-width: 767px) {
+    &:hover {
+      filter: invert(100%) sepia(100%) saturate(2878%) hue-rotate(213deg)
+        brightness(60%) contrast(50%);
+    }
+  }
+}
+
+.founders-list {
+  gap: 2rem;
+
+  @media only screen and (min-width: 992px) {
+    gap: 0rem;
+  }
+}

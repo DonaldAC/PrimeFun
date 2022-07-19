@@ -1,0 +1,55 @@
+:host {
+  padding-right: 1.625rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 40px;
+  overflow: auto;
+  overflow-y: scroll;
+  scrollbar-color: #979797;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #cdcdcd;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #979797;
+  }
+  @media screen and (max-width: 1445px) {
+    .message {
+      margin-left: 0.95rem;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    .message {
+      margin-left: 1.85rem;
+    }
+  }
+  @media screen and (max-width: 414px) {
+    .message {
+      margin-left: 1.75rem;
+    }
+  }
+}
+
+.message-item {
+  padding: 0.625rem 1.05rem;
+  border-radius: 0.625rem;
+  box-shadow: 0px 0.188rem 0.625rem rgba(0, 0, 0, 0.15);
+  background: #455466;
+  color: #fff;
+}
+
+.message-item.user {
+  background: #fff;
+  color: #455466;
+}
+
+span {
+  font-size: 10px;
+}

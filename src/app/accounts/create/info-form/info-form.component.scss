@@ -1,0 +1,27 @@
+@import "../../styles/styles.scss";
+@import "/src/styles/mixnins";
+.btn-secondary,
+.btn-danger {
+  border-radius: 0.313rem;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  width: initial;
+  height: initial;
+}
+
+.select {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  font-family: "Poppins";
+  font-size: 1rem;
+  color: #495057;
+  appearance: none;
+  background: url("/assets/images/accounts/arrow-down.svg") no-repeat 95%;
+  background-size: 2%;
+}
+
+.error-message {
+  display: inline-flex;
+  font-size: pxToRem(12);
+  width: 100%;
+  text-align: start;
+}

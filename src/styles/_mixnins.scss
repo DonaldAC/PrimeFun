@@ -1,0 +1,81 @@
+@import "./variables";
+
+/*
+    Defines mixins brake- points for different devices.
+    Make our code cleaner and much simpler when styling for different devices
+    PX to EM or REM converter mixins. Please just use the
+    pxToRem and pxToEm functions, and not the pxToRemOrRem.
+*/
+$baseFont: 16;
+
+@function pxToRemOrEm($pxValues, $unit: rem) {
+  $remValues: null;
+
+  @each $pxValue in $pxValues {
+    $remValues: append($remValues, $pxValue / $baseFont + $unit);
+  }
+
+  @return $remValues;
+}
+
+@function pxToRem($pxValues) {
+  @return pxToRemOrEm($pxValues, rem);
+}
+
+@function pxToEm($pxValues) {
+  @return pxToRemOrEm($pxValues, em);
+}
+
+/*
+    Mixin for media queries and breakpoints. For now we are
+    only using min-width.
+
+    The mixin can be used like this:
+
+    @include media("tablet-landscape") {
+        width: 50%;
+    }
+*/
+$breakpoints: (
+  "mobile-portrait-max": (
+    max-width: $screen-mobile-landscape - 1px,
+  ),
+  "mobile-landscape": (
+    min-width: $screen-mobile-landscape,
+  ),
+  "mobile-landscape-max": (
+    max-width: $screen-tablet-portrait - 1px,
+  ),
+  "tablet-portrait": (
+    min-width: $screen-tablet-portrait,
+  ),
+  "tablet-portrait-max": (
+    max-width: $screen-tablet-landscape - 1px,
+  ),
+  "tablet-landscape": (
+    min-width: $screen-tablet-landscape,
+  ),
+  "tablet-landscape-max": (
+    max-width: $screen-desktop-small - 1px,
+  ),
+  "desktop-small": (
+    min-width: $screen-desktop-small,
+  ),
+  "desktop-medium": (
+    min-width: $screen-desktop-medium,
+  ),
+  "desktop-large": (
+    min-width: $screen-desktop-large,
+  ),
+);
+
+@mixin media($breakpoint) {
+  @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "The specified breakpoint `#{$breakpoint}` does not exits. Available breakpoints are: #{map-keys($breakpoints)}";
+  }
+}
+

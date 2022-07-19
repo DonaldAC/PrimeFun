@@ -1,0 +1,106 @@
+<div class="mx-0 mx">
+  <form *ngIf="!isBriefSubmitted" [formGroup]="formGroup">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-12 text-center" style="max-width: 670px">
+        <label class="mb-4 text-primary font-weight-medium">
+          Let's get your brief started. Don't worry about going to much into
+          details. You will get chance to speak to project manager in our online
+          briefing room.
+        </label>
+      </div>
+      <div class="d-flex col-12 input">
+        <textarea
+          name="area"
+          id="area"
+          cols="30"
+          rows="10"
+          placeholder="Minimum 500 words..."
+          class="col-12 px-0 form-input textarea mb-0"
+          formControlName="projectBriefing"
+        ></textarea>
+      </div>
+    </div>
+    <div class="text-center">
+      <button
+        (click)="submitBrief()"
+        class="btn btn-danger font-weight-semibold mb-3 mt-4"
+        [disabled]="!formGroup.valid"
+      >
+        Submit and open briefing room
+      </button>
+    </div>
+  </form>
+  <div
+    *ngIf="isBriefSubmitted && !isChatStarted"
+    class="start-chat-container d-flex flex-column align-items-stretch mb-5"
+  >
+    <p
+      class="mb-0 text-primary text-center font-weight-medium align-self-center"
+      style="max-width: 600px"
+    >
+      Chat with our project manager to agree on a scope of work and agree a
+      price for your project.
+    </p>
+    <div class="start-chat mt-5">
+      <div
+        class="chat-header d-flex justify-content-center align-items-center p-3"
+      >
+        <img
+          src="assets/images/logos/atechy-logo.svg"
+          alt="atechy logo"
+          class="atechy-logo img-fluid"
+        />
+      </div>
+      <div
+        class="
+          chat-body
+          d-flex
+          flex-column
+          justify-content-center
+          align-items-center
+          p-5
+        "
+      >
+        <div class="position-relative">
+          <div
+            class="employee-img-wrapper bg-white shadow p-1"
+            style="border-radius: 50%"
+          >
+            <img
+              src="assets/images/misc/john.svg"
+              alt="employee img"
+              class="emp-img img-fluid"
+            />
+          </div>
+          <img
+            src="assets/images/dashboard/main-content/get-started/emp-img-circles.svg"
+            alt="circles"
+            class="emp-img-circles img-fluid position-absolute left-0"
+          />
+        </div>
+        <p
+          class="
+            font-16px
+            mb-0
+            mt-4
+            text-primary text-center
+            font-weight-medium
+          "
+        >
+          Hello there! I'm John from Funda. I'm here to help you get brief on
+          your first project and launching.
+          <br />
+          <b class="font-weight-semibold"> Let's go!</b>
+        </p>
+      </div>
+      <div (click)="startChat()" class="chat-footer text-center bg-white p-4">
+        <p class="mb-0 font-weight-semibold" style="color: #455466">
+          Start chat now!
+        </p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isChatStarted" class="chat-container">
+    <app-chat></app-chat>
+  </div>
+</div>

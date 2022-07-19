@@ -1,0 +1,20 @@
+@import "/src/theme/colors";
+@import "/src/styles/mixnins";
+
+$calender-widget-height: 600px;
+
+.navbar {
+  background: $primaryColor;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: pxToRem(80);
+  .logo {
+    width: pxToRem(120);
+    height: pxToRem(60);
+    @include media("tablet-portrait") {
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+}

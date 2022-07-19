@@ -1,0 +1,73 @@
+<nav
+  class="navbar home-navbar fixed-top bg-primary navbar-expand-lg py-2 py-lg-4"
+>
+  <div class="container">
+    <img
+      class="navbar-brand img-fluid"
+      src="assets/images/logos/funda-logo.svg"
+      alt="Funda Logo"
+      width="150"
+    />
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="isCollapsed = !isCollapsed"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="sr-only">Toggle navigation</span>
+      <span>
+        <img
+          src="assets/images/header/bars-blue.svg"
+          alt=""
+          style="width: 24px"
+        />
+      </span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNavAltMarkup"
+      [collapse]="isCollapsed"
+      [isAnimated]="true"
+    >
+      <ul class="navbar-nav ml-auto align-items-center">
+        <li class="nav-item active mr-lg-5 font-weight-medium">
+          <a (click)="scrollTo('crm-section')" class="nav-link text-white"
+            >About</a
+          >
+        </li>
+        <li class="nav-item mr-lg-5 font-weight-medium">
+          <a (click)="scrollTo('founders-section')" class="nav-link text-white"
+            >Success Stories</a
+          >
+        </li>
+        <li class="nav-item mr-lg-5 font-weight-medium">
+          <a (click)="scrollTo('homepage-footer')" class="nav-link text-white"
+            >Contact</a
+          >
+        </li>
+        <li class="nav-item mr-lg-5 font-weight-medium">
+          <a [routerLink]="['/accounts/login']" class="nav-link text-white"
+            >FAQs</a
+          >
+        </li>
+        <li class="nav-item mr-lg-5 font-weight-medium">
+          <a class="nav-link text-white" (click)="loginOrLogout()">{{
+            login ? "Login" : "Logout"
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a
+            [routerLink]="['/accounts/create']"
+            [queryParams]="{ step: 'account' }"
+            class="btn btn-danger text-white font-weight-semibold"
+            >Get&nbsp;Funded</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,99 @@
+<!--Start of simple pricing section -->
+<section class="simple-pricing" id="pricing-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center text-center">
+        <h1 class="heading font-50px font-weight-bold text-primary">
+          Simple Pricing
+        </h1>
+      </div>
+      <div class="col-12 d-flex justify-content-center text-center">
+        <h2 class="sub-heading text-gray font-24px">
+          0% interest rates, one flat fee
+        </h2>
+      </div>
+    </div>
+    <div class="row justify-content-center justify-content-md-between">
+      <div
+        class="col-12 col-sm-7 col-md-5 col-lg-4 col-xl-3 order-2 order-md-1"
+      >
+        <div class="your-offer-box">
+          <div class="box-header bg-primary text-white text-center">
+            <h3 class="font-weight-bold py-3">Your Offer</h3>
+          </div>
+          <div class="form-container">
+            <div class="price-details d-flex justify-content-between">
+              <p class="form-text mb-3">Amount</p>
+              <p class="form-text mb-3">
+                {{
+                  (amount ? amount : 5000) | currency: "GBP":"symbol":"0.0-0"
+                }}
+              </p>
+            </div>
+            <div class="price-details my-4 d-flex justify-content-between">
+              <p class="form-text mb-3">Fee</p>
+              <p class="form-text mb-3">£1,000</p>
+            </div>
+            <div class="price-details mb-4 d-flex justify-content-between">
+              <p class="form-text mb-3">Total repayable</p>
+              <p class="form-text mb-3">
+                {{ totalRepayable | currency: "GBP":"symbol":"0.0-0" }}
+              </p>
+            </div>
+            <div class="btn-container text-center">
+              <a
+                [routerLink]="['/accounts/create']"
+                [queryParams]="{ step: 'account' }"
+                class="btn btn-danger font-weight-semibold"
+              >
+                Get funded
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-12 col-md-7 col-lg-8 col-xl-9 order-1 order-md-2 overflow-x-hidden"
+      >
+        <div class="input-container ml-xl-5 position-relative">
+          <h3
+            class="d-none d-md-block font-24px text-danger font-weight-bold text-center position-absolute range"
+          >
+            £5k - £500k
+          </h3>
+          <img
+            src="assets/images/homepage/pricing-section/arrow.svg"
+            alt="arrow"
+            class="d-none d-md-block img-fluid position-absolute arrow"
+          />
+          <h3
+            class="font-24px text-gray font-weight-semibold text-center text-sm-left"
+          >
+            How much fund do you need?
+          </h3>
+          <input
+            type="text"
+            class="font-50px text-primary font-weight-bold text-center text-sm-left"
+            [OnlyNumber]="true"
+            maxlength="8"
+            placeholder="£5,000"
+            (input)="onChange($event)"
+            (blur)="onBlur($event)"
+            [value]="amount | currency: 'GBP':'symbol':'0.0-0'"
+          />
+          <div class="d-flex flex-wrap">
+            <div class="points">
+              <li class="my-4">Repay over 3 years</li>
+              <li class="my-4">No hidden costs</li>
+            </div>
+            <div class="points">
+              <li class="li-margin-top-0 my-4">No equity</li>
+              <li class="my-4">No personal gurantee</li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of simple pricing section -->

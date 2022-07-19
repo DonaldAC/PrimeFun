@@ -1,0 +1,16 @@
+@import "../../styles/styles.scss";
+@import "/src/styles/mixnins";
+
+.btn-danger {
+  border-radius: 0.313rem;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  width: initial;
+  height: initial;
+}
+
+.error-message {
+  display: inline-flex;
+  font-size: pxToRem(12);
+  width: 100%;
+  text-align: start;
+}

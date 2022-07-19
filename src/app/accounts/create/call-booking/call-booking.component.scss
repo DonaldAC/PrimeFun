@@ -1,0 +1,71 @@
+@import "/src/styles/mixnins";
+@import "/src/theme/colors";
+
+
+.container{
+  margin: 0;
+  @include media("tablet-portrait") {
+    margin: 0;
+  }
+  @include media("tablet-landscape") {
+    margin-left: pxToRem(506);
+    margin-right: pxToRem(506);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #171c3680;
+  z-index: 9999;
+  height: 100vh;
+  width: 100vw;
+  .img {
+    padding-top: pxToRem(152);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .button-container {
+    display: grid;
+    justify-content: center;
+    align-items: baseline;
+    @include media("tablet-portrait") {
+      display: flex;
+    }
+  }
+}
+
+.btn-booking,
+.btn-sign-in {
+  padding: pxToRem(15 40);
+}
+
+.btn-sign-in {
+  margin-top: pxToRem(10);
+  background-color: $nuetral-gray-color;
+  border: none;
+  @include media("tablet-portrait") {
+    margin-inline-start: pxToRem(30);
+  }
+}
+
+.description {
+  margin-top: pxToRem(60);
+  font-size: pxToRem(16);
+  text-align: center;
+}
+
+.fore-ground {
+  background: #ffffff;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+
+  @include media("tablet-portrait") {
+    opacity: 0.95;
+  }
+}

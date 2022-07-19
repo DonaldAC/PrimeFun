@@ -1,0 +1,56 @@
+<div
+  class="
+    d-flex
+    flex-column
+    justify-content-center
+    align-items-center
+    mx-4
+    text-center
+  "
+>
+  <span
+    class="shadow p-4"
+    style="border-radius: 50%"
+    [ngClass]="{ 'bg-white': !isVerified, 'bg-green': isVerified }"
+    ><img
+      [src]="
+        isVerified
+          ? 'assets/images/dashboard/main-content/get-started/fingerprint-verification-white.svg'
+          : 'assets/images/dashboard/main-content/get-started/fingerprint-verification-pink.svg'
+      "
+      alt="locked"
+      class="img-fluid"
+      height="75"
+      width="75"
+  /></span>
+
+  <h3
+    *ngIf="!isVerified"
+    class="font-16px text-primary font-weight-medium mt-4 mb-0"
+  >
+    We need you to verify your identity
+  </h3>
+  <h3
+    *ngIf="!isVerified"
+    class="font-16px text-primary font-weight-medium my-4"
+  >
+    Don't worry, it will take less than 2 minutes.
+    <b class="font-weight-semibold"> We use Onfido!</b>
+  </h3>
+  <h3 *ngIf="isVerified" class="font-16px text-green font-weight-semibold my-4">
+    Your identity has been verified!
+  </h3>
+
+  <a
+    *ngIf="!isVerified"
+    (click)="verify()"
+    class="btn btn-danger font-weight-medium mb-3"
+    >Start Verification</a
+  >
+  <a
+    *ngIf="isVerified"
+    (click)="goToNextAccordionItem('project-briefing', $event)"
+    class="btn btn-danger font-weight-medium mt-5 mb-3"
+    >Let's get down to business</a
+  >
+</div>
