@@ -1,28 +1,80 @@
 # PrimeFun
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+A web application for business funding and lending. Users create accounts, complete a multi-step onboarding flow, and submit funding applications that are automatically synced to Pipedrive CRM via Firebase Cloud Functions.
 
-## Development server
+## Tech Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- **Frontend:** Angular 11, TypeScript, Bootstrap 4, SCSS
+- **Backend:** Firebase (Firestore, Auth, Storage, Hosting, Cloud Functions)
+- **CRM Integration:** Pipedrive (via Cloud Functions triggered on Firestore writes)
+- **Scheduling:** Calendly (embedded iframes)
 
+## Getting Started
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js 12+
+- Angular CLI: `npm install -g @angular/cli`
+- Firebase CLI: `npm install -g firebase-tools`
 
-## Build
+### Install dependencies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+npm install
+cd functions && npm install && cd ..
+```
 
-## Running unit tests
+### Development server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+ng serve
+```
 
-## Running end-to-end tests
+Navigate to `http://localhost:4200/`. The app reloads automatically on file changes.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Environment configuration
 
-## Further help
+Copy `src/environments/environment.ts` and populate it with your Firebase project credentials before running locally.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Commands
+
+| Command | Description |
+|---|---|
+| `ng serve` | Start dev server at localhost:4200 |
+| `ng build` | Development build (output: `dist/`) |
+| `ng build --prod` | Production build with optimizations |
+| `ng test` | Run unit tests via Karma/Jasmine |
+| `ng lint` | Run TSLint |
+| `ng e2e` | Run end-to-end tests via Protractor |
+
+### Cloud Functions (`functions/` directory)
+
+| Command | Description |
+|---|---|
+| `npm run build` | Compile TypeScript |
+| `npm run serve` | Build + start Firebase emulators |
+| `npm run deploy` | Deploy functions to Firebase |
+| `npm run logs` | Tail live function logs |
+
+## Project Structure
+
+```
+src/app/
+├── home/          # Public landing page
+├── accounts/      # Signup, login, password reset + Firestore service
+├── dashboard/     # Protected post-login onboarding flow
+├── auth/          # Firebase Auth wrapper service
+├── chat/          # Messaging feature
+└── shared/        # Reusable components and directives
+
+functions/src/
+└── index.ts       # Firestore triggers → Pipedrive CRM sync
+```
+
+## Deployment
+
+```bash
+firebase deploy            # Deploy hosting + functions
+firebase deploy --only hosting
+firebase deploy --only functions
+```

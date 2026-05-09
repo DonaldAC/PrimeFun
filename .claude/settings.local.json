@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\DONALD\\\\Documents\\\\My_Repositories\\\\PrimeFun\\\\src\" -Recurse -Directory | Select-Object -ExpandProperty FullName | ForEach-Object { $_.Replace\\('C:\\\\Users\\\\DONALD\\\\Documents\\\\My_Repositories\\\\PrimeFun\\\\', ''\\) })"
+    ]
+  }
+}
